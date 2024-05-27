@@ -103,7 +103,7 @@ local theme = lush( function(injected_functions)
 
          , Comment        { fg = white.da(60), italic = true }
 
-         , Constant       { fg = white.da(30) }
+         , Constant       { fg = white.da(40) }
          , String         { Constant }
          , Character      { Constant }
          , Number         { Constant }
@@ -119,20 +119,20 @@ local theme = lush( function(injected_functions)
          , Label          { Statement }
          , Operator       { fg = white, bold = true }
          , Keyword        { Statement }
-         , Exception      { Statement }
+         , Exception      { Statement, underline = true }
 
-         , PreProc        { fg = white.da(40) }
+         , PreProc        { fg = white.da(40), italic = true }
          , Include        { PreProc }
          , Define         { PreProc }
          , Macro          { PreProc }
          , PreCondit      { PreProc }
 
-         , Type           { fg = white.da(5) }
-         , StorageClass   { Type }
-         , Structure      { Type }
-         , Typedef        { Type }
+         , Type           { fg = white.da(5), bold = true, italic = true }
+         , StorageClass   { fg = white.da(5), bold = true, italic = true }
+         , Structure      { fg = white.da(5), bold = true, italic = false }
+         , Typedef        { fg = white.da(5), bold = true, italic = true }
 
-         , Special        { fg = white.da(10) }
+         , Special        { fg = white.li(10) }
          , SpecialChar    { Special }
          , Tag            { Special }
          , Delimiter      { Special }
@@ -140,8 +140,8 @@ local theme = lush( function(injected_functions)
          , Debug          { Special }
 
          , Underlined     { underline = true }
-         , Ignore         { fg = black.li(30)}
-         , Error          { fg = white.da(10), bg = red}
+         , Ignore         { fg = black.li(30) }
+         , Error          { ErrorMsg }
          , Todo           { fg = white.da(4), undercurl = true, sp = yellow }
 
          , DiagnosticError            { underline = true, sp = red    }
