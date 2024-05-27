@@ -1,4 +1,3 @@
---
 -- Built with,
 --
 --        ,gggg,
@@ -12,14 +11,8 @@
 -- Yb,_,d88b,,_   ,d8b,  ,d8b,,8'_   8) ,d8     I8,
 --  "Y8P"  "Y888888P'"Y88P"`Y8P' "YY8P8P88P     `Y8
 --
-
 -- Enable lush.ify on this file, run:
---
 --  `:Lushify`
---
---  or
---
---  `:lua require("lush").ify()`
 
 local lush = require("lush")
 local hsl  = lush.hsl
@@ -46,18 +39,18 @@ local theme = lush( function(injected_functions)
          , CursorColumn   { bg = black.li(15) }
          , CursorLine     { bg = black.li(15) }
          , Directory      { bg = black.li(4), fg = white.da(15), bold = true }
-         , DiffAdd        { bg = black.li(4), fg = green }
-         , DiffChange     { bg = black.li(4), fg = yellow }
-         , DiffDelete     { bg = black.li(4), fg = red }
+         , DiffAdd        { bg = black.li(4), fg = white.da(10) }
+         , DiffChange     { bg = black.li(4), fg = white.da(20) }
+         , DiffDelete     { bg = black.li(4), fg = white.da(40) }
          , DiffText       { bg = black.li(4), fg = white.da(40) }
          , EndOfBuffer    { bg = black.li(4), fg = black.li(4) }
          , TermCursor     { Cursor }
          , TermCursorNC   { TermCursor }
-         , ErrorMsg       { bg = black.li(4), fg = red }
+         , ErrorMsg       { fg = white.da(5), bg = red }
          , VertSplit      { bg = black.li(20), fg = black.li(20) }
          , Folded         { bg = black.li(4), fg = white.da(20) }
          , FoldColumn     { bg = black.li(4), fg = white.da(10) }
-         , SignColumn     { bg = black.li(4), fg = green }
+         , SignColumn     { bg = black.li(4), fg = white.da(15) }
          , IncSearch      { bg = white.da(20), fg = black.li(20) }
          , Substitute     { }
          , LineNr         { bg = black.li(4), fg = white.da(15), bold = false }
@@ -101,7 +94,7 @@ local theme = lush( function(injected_functions)
          , Title          { bg = black.li(4), fg = white.da(10) }
          , Visual         { reverse = true }
          , VisualNOS      { reverse = true }
-         , WarningMsg     { fg = yellow }
+         , WarningMsg     { bg = yellow, fg = black.li(5) }
          , Whitespace     { NonText }
          , Winseparator   { VertSplit }
          , WildMenu       { PmenuSel }
@@ -151,11 +144,11 @@ local theme = lush( function(injected_functions)
          , Error          { fg = white.da(10), bg = red}
          , Todo           { fg = white.da(4), undercurl = true, sp = yellow }
 
-         , DiagnosticError            { fg = red }
-         , DiagnosticWarn             { fg = yellow }
-         , DiagnosticInfo             { fg = purple }
-         , DiagnosticHint             { fg = blue }
-         , DiagnosticOk               { fg = green }
+         , DiagnosticError            { underline = true, sp = red    }
+         , DiagnosticWarn             { underline = true, sp = yellow }
+         , DiagnosticInfo             { underline = true, sp = purple }
+         , DiagnosticHint             { underline = true, sp = blue   }
+         , DiagnosticOk               { underline = true, sp = green  }
          , DiagnosticVirtualTextError { DiagnosticError, bold = true }
          , DiagnosticVirtualTextWarn  { DiagnosticWarn, bold = true }
          , DiagnosticVirtualTextInfo  { DiagnosticInfo, bold = true }
@@ -171,11 +164,11 @@ local theme = lush( function(injected_functions)
          , DiagnosticFloatingInfo     { DiagnosticInfo }
          , DiagnosticFloatingHint     { DiagnosticHint }
          , DiagnosticFloatingOk       { DiagnosticOk }
-         , DiagnosticSignError        { DiagnosticError }
-         , DiagnosticSignWarn         { DiagnosticWarn }
-         , DiagnosticSignInfo         { DiagnosticInfo }
-         , DiagnosticSignHint         { DiagnosticHint }
-         , DiagnosticSignOk           { DiagnosticOk }
+         , DiagnosticSignError        { fg = red }
+         , DiagnosticSignWarn         { fg = yellow }
+         , DiagnosticSignInfo         { fg = purple }
+         , DiagnosticSignHint         { fg = blue }
+         , DiagnosticSignOk           { fg = green }
 
          -- , LspReferenceText            { }
          -- , LspReferenceRead            { }
