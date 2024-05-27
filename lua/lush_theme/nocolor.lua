@@ -66,8 +66,8 @@ local theme = lush( function(injected_functions)
          , ModeMsg        { MoreMsg }
          , NonText        { bg = black.li(4), fg = black.li(4) }
          , Normal         { bg = black.li(4), fg = white.da(15) }
-         , NormalFloat    { Normal }
-         , FloatBorder    { bg = black.li(4), fg = white.da(20) }
+         , NormalFloat    { bg = black.li(10) }
+         , FloatBorder    { bg = black.li(15), fg = white }
          , FloatTitle     { Normal, underline = true }
          , NormalNC       { Normal }
          , Pmenu          { bg = black.li(15), fg = white.da(14) }
@@ -144,16 +144,16 @@ local theme = lush( function(injected_functions)
          , Error          { ErrorMsg }
          , Todo           { fg = white.da(4), undercurl = true, sp = yellow.de(50) }
 
-         , DiagnosticError            { fg = white.da(45), underline = true, sp = red.de(50) }
-         , DiagnosticWarn             { fg = white.da(45), underline = true, sp = yellow.de(60) }
-         , DiagnosticInfo             { fg = white.da(45), underline = true, sp = blue.de(50) }
-         , DiagnosticHint             { fg = white.da(45), underline = true, sp = purple.de(50) }
-         , DiagnosticOk               { fg = white.da(45), underline = true, sp = green.de(50) }
-         , DiagnosticVirtualTextError { DiagnosticError, bold = true }
-         , DiagnosticVirtualTextWarn  { DiagnosticWarn, bold = true }
-         , DiagnosticVirtualTextInfo  { DiagnosticInfo, bold = true }
-         , DiagnosticVirtualTextHint  { DiagnosticHint, bold = true }
-         , DiagnosticVirtualTextOk    { DiagnosticOk  , bold = true }
+         , DiagnosticError            { fg = red.de(50) }
+         , DiagnosticWarn             { fg = yellow.de(60) }
+         , DiagnosticInfo             { fg = blue.de(50) }
+         , DiagnosticHint             { fg = purple.de(50) }
+         , DiagnosticOk               { fg = green.de(50) }
+         , DiagnosticVirtualTextError { fg = DiagnosticError.fg.de(40), italic = true }
+         , DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg.de(40), italic = true }
+         , DiagnosticVirtualTextInfo  { fg = DiagnosticInfo.fg.de(40), italic = true }
+         , DiagnosticVirtualTextHint  { fg = DiagnosticHint.fg.de(40), italic = true }
+         , DiagnosticVirtualTextOk    { fg = DiagnosticOk.fg.de(40), italic = true }
          , DiagnosticUnderlineError   { fg = white.da(45), undercurl = true, sp = red.de(50) }
          , DiagnosticUnderlineWarn    { fg = white.da(45), undercurl = true, sp = yellow.de(50) }
          , DiagnosticUnderlineInfo    { fg = white.da(45), undercurl = true, sp = blue.de(50) }
@@ -164,11 +164,13 @@ local theme = lush( function(injected_functions)
          , DiagnosticFloatingInfo     { DiagnosticInfo }
          , DiagnosticFloatingHint     { DiagnosticHint }
          , DiagnosticFloatingOk       { DiagnosticOk }
-         , DiagnosticSignError        { fg = red.de(50) }
-         , DiagnosticSignWarn         { fg = yellow.de(50) }
-         , DiagnosticSignInfo         { fg = blue.de(50) }
-         , DiagnosticSignHint         { fg = purple.de(50) }
-         , DiagnosticSignOk           { fg = green.de(50) }
+         , DiagnosticSignError        { fg = white }
+         , DiagnosticSignWarn         { fg = white }
+         , DiagnosticSignInfo         { fg = white }
+         , DiagnosticSignHint         { fg = white }
+         , DiagnosticSignOk           { fg = white }
+         , DiagnosticDeprecated       { fg = white.da(40), strikethrough = true }
+         , DiagnosticUnnecessary      { fg = white.da(40), strikethrough = true }
 
          -- , LspReferenceText            { }
          -- , LspReferenceRead            { }
