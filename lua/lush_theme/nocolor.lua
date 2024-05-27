@@ -17,15 +17,15 @@
 local lush = require("lush")
 local hsl  = lush.hsl
 
-local black   = hsl(0,0,0).desaturate(100)
-local white   = hsl(255,255,255).desaturate(100)
+local black   = hsl(0,0,0).de(100)
+local white   = hsl(255,255,255).de(100)
 
-local yellow  = "#FFB20F"
-local red     = "#8F0024"
-local green   = "#0EAD69"
-local purple  = "#BD05CB"
-local blue    = "#0077DB"
-local cyan    = "#20B2AA"
+local yellow  = hsl(40,100,52)
+local red     = hsl(344,100,28)
+local green   = hsl(154,85,36)
+local purple  = hsl(295,95,40)
+local blue    = hsl(207,100,42)
+local cyan    = hsl(176,69,41)
 
 ---@diagnostic disable: undefined-global
 local theme = lush( function(injected_functions)
@@ -46,7 +46,7 @@ local theme = lush( function(injected_functions)
          , EndOfBuffer    { bg = black.li(4), fg = black.li(4) }
          , TermCursor     { Cursor }
          , TermCursorNC   { TermCursor }
-         , ErrorMsg       { fg = white.da(5), bg = red }
+         , ErrorMsg       { fg = white.da(5), bg = red.darken(40) }
          , VertSplit      { bg = black.li(20), fg = black.li(20) }
          , Folded         { bg = black.li(4), fg = white.da(20) }
          , FoldColumn     { bg = black.li(4), fg = white.da(10) }
@@ -67,11 +67,11 @@ local theme = lush( function(injected_functions)
          , NonText        { bg = black.li(4), fg = black.li(4) }
          , Normal         { bg = black.li(4), fg = white.da(15) }
          , NormalFloat    { Normal }
-         , FloatBorder    { VertSplit }
-         , FloatTitle     { Normal }
+         , FloatBorder    { bg = black.li(4), fg = white.da(20) }
+         , FloatTitle     { Normal, underline = true }
          , NormalNC       { Normal }
-         , Pmenu          { bg = black.li(15), fg = white.da(14)}
-         , PmenuSel       { bg = black.li(25), fg = white.da(4)}
+         , Pmenu          { bg = black.li(15), fg = white.da(14) }
+         , PmenuSel       { bg = black.li(25), fg = white.da(4) }
          , PmenuKind      { Pmenu }
          , PmenuKindSel   { PmenuSel }
          , PmenuExtra     { Pmenu }
@@ -82,10 +82,10 @@ local theme = lush( function(injected_functions)
          , QuickFixLine   { }
          , Search         { IncSearch }
          , SpecialKey     { bg = black, fg = white }
-         , SpellBad       { undercurl = true, sp = red }
-         , SpellCap       { undercurl = true, sp = green }
-         , SpellLocal     { undercurl = true, sp = blue }
-         , SpellRare      { undercurl = true, sp = purple }
+         , SpellBad       { undercurl = true, sp = red.de(50) }
+         , SpellCap       { undercurl = true, sp = green.de(50) }
+         , SpellLocal     { undercurl = true, sp = blue.de(50) }
+         , SpellRare      { undercurl = true, sp = purple.de(50) }
          , StatusLine     { }
          , StatusLineNC   { }
          , TabLine        { }
@@ -94,7 +94,7 @@ local theme = lush( function(injected_functions)
          , Title          { bg = black.li(4), fg = white.da(10) }
          , Visual         { reverse = true }
          , VisualNOS      { reverse = true }
-         , WarningMsg     { bg = yellow, fg = black.li(5) }
+         , WarningMsg     { bg = yellow.darken(60), fg = white.da(5) }
          , Whitespace     { NonText }
          , Winseparator   { VertSplit }
          , WildMenu       { PmenuSel }
@@ -142,33 +142,33 @@ local theme = lush( function(injected_functions)
          , Underlined     { underline = true }
          , Ignore         { fg = black.li(30) }
          , Error          { ErrorMsg }
-         , Todo           { fg = white.da(4), undercurl = true, sp = yellow }
+         , Todo           { fg = white.da(4), undercurl = true, sp = yellow.de(50) }
 
-         , DiagnosticError            { underline = true, sp = red    }
-         , DiagnosticWarn             { underline = true, sp = yellow }
-         , DiagnosticInfo             { underline = true, sp = purple }
-         , DiagnosticHint             { underline = true, sp = blue   }
-         , DiagnosticOk               { underline = true, sp = green  }
+         , DiagnosticError            { fg = white.da(45), underline = true, sp = red.de(50) }
+         , DiagnosticWarn             { fg = white.da(45), underline = true, sp = yellow.de(60) }
+         , DiagnosticInfo             { fg = white.da(45), underline = true, sp = blue.de(50) }
+         , DiagnosticHint             { fg = white.da(45), underline = true, sp = purple.de(50) }
+         , DiagnosticOk               { fg = white.da(45), underline = true, sp = green.de(50) }
          , DiagnosticVirtualTextError { DiagnosticError, bold = true }
          , DiagnosticVirtualTextWarn  { DiagnosticWarn, bold = true }
          , DiagnosticVirtualTextInfo  { DiagnosticInfo, bold = true }
          , DiagnosticVirtualTextHint  { DiagnosticHint, bold = true }
          , DiagnosticVirtualTextOk    { DiagnosticOk  , bold = true }
-         , DiagnosticUnderlineError   { undercurl = true, sp = red }
-         , DiagnosticUnderlineWarn    { undercurl = true, sp = yellow }
-         , DiagnosticUnderlineInfo    { undercurl = true, sp = purple }
-         , DiagnosticUnderlineHint    { undercurl = true, sp = blue }
-         , DiagnosticUnderlineOk      { undercurl = true, sp = green }
+         , DiagnosticUnderlineError   { fg = white.da(45), undercurl = true, sp = red.de(50) }
+         , DiagnosticUnderlineWarn    { fg = white.da(45), undercurl = true, sp = yellow.de(50) }
+         , DiagnosticUnderlineInfo    { fg = white.da(45), undercurl = true, sp = blue.de(50) }
+         , DiagnosticUnderlineHint    { fg = white.da(45), undercurl = true, sp = purple.de(50) }
+         , DiagnosticUnderlineOk      { fg = white.da(45), undercurl = true, sp = green.de(50) }
          , DiagnosticFloatingError    { DiagnosticError }
          , DiagnosticFloatingWarn     { DiagnosticWarn }
          , DiagnosticFloatingInfo     { DiagnosticInfo }
          , DiagnosticFloatingHint     { DiagnosticHint }
          , DiagnosticFloatingOk       { DiagnosticOk }
-         , DiagnosticSignError        { fg = red }
-         , DiagnosticSignWarn         { fg = yellow }
-         , DiagnosticSignInfo         { fg = purple }
-         , DiagnosticSignHint         { fg = blue }
-         , DiagnosticSignOk           { fg = green }
+         , DiagnosticSignError        { fg = red.de(50) }
+         , DiagnosticSignWarn         { fg = yellow.de(50) }
+         , DiagnosticSignInfo         { fg = blue.de(50) }
+         , DiagnosticSignHint         { fg = purple.de(50) }
+         , DiagnosticSignOk           { fg = green.de(50) }
 
          -- , LspReferenceText            { }
          -- , LspReferenceRead            { }
