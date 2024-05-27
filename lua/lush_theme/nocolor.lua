@@ -59,7 +59,7 @@ local theme = lush( function(injected_functions)
          , CursorLineNr   { bg = black.li(4), fg = white.da(15), bold = true }
          , CursorLineFold { }
          , CursorLineSign { }
-         , MatchParen     { Cursor, bold = true }
+         , MatchParen     { bg = black.li(20), fg = white, bold = true }
          , MsgArea        { }
          , MsgSeparator   { }
          , MoreMsg        { bg = black.li(4), fg = white.da(10), bold = true }
