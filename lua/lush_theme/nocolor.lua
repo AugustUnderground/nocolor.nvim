@@ -86,8 +86,8 @@ local theme = lush( function(injected_functions)
          , SpellCap       { undercurl = true, sp = green.de(50) }
          , SpellLocal     { undercurl = true, sp = blue.de(50) }
          , SpellRare      { undercurl = true, sp = purple.de(50) }
-         , StatusLine     { }
-         , StatusLineNC   { }
+         -- , StatusLine     { }
+         -- , StatusLineNC   { }
          , TabLine        { }
          , TabLineFill    { bg = black.li(4) }
          , TabLineSel     { bg = black.li(20), bold = true }
