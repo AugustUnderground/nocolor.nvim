@@ -132,7 +132,7 @@ local theme = lush( function(injected_functions)
          , Structure      { fg = white.da(5), bold = true, italic = false }
          , Typedef        { fg = white.da(5), bold = true, italic = true }
 
-         , Special        { fg = white.li(10) }
+         , Special        { fg = white.da(50) }
          , SpecialChar    { Special }
          , Tag            { Special }
          , Delimiter      { Special }
