@@ -2,6 +2,8 @@
 
 Made with [lush](http://git.io/lush.nvim).
 
+![image](https://github.com/AugustUnderground/nocolor.nvim/assets/9946778/c7dfba22-514c-440b-b040-422f51561410)
+
 ## Install
 
 With [lazy](https://github.com/folke/lazy.nvim):
