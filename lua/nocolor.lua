@@ -19,4 +19,4 @@ local function switch()
   end
 end
 
-return { bg = set_bg }
+return { bg = set_bg, switch = switch }
