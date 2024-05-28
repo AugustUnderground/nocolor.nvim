@@ -5,6 +5,7 @@ local function set_bg(background)
     print("nocolor: Cannot set background to " .. background)
   else
     vim.cmd("doautocmd ColorSchemePre")
+    vim.opt.background = background
     lush(require("lush_theme.nocolor-" .. background))
     vim.cmd("doautocmd ColorScheme")
   end

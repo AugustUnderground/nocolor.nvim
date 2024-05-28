@@ -204,6 +204,12 @@ local theme = lush( function(injected_functions)
 
          , QuickScopePrimary           { fg = black, bg = white }
          , QuickScopeSecondary         { fg = black.li(15), bg = white.da(30) }
+
+         , NvimTreeFolderIcon          { Normal }
+         , NvimTreeOpenedFolderIcon    { NvimTreeFolderIcon }
+         , NvimTreeClosedFolderIcon    { NvimTreeFolderIcon }
+         , NvimTreeFolderArrowClosed   { NvimTreeFolderIcon }
+         , NvimTreeFolderArrowOpen     { NvimTreeFolderIcon }
 }
 end)
 
