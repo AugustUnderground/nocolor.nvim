@@ -12,7 +12,7 @@ local function set_bg(background)
 end
 
 local function switch()
-  if vim.opt.background == "dark" then
+  if vim.o.background == "dark" then
     set_bg("light")
   else
     set_bg("dark")
