@@ -36,4 +36,4 @@ Works well with [lualine](https://github.com/nvim-lualine/lualine.nvim) and
 ## Lightswitch
 
 Switch between light and dark mode on the fly with the `:Light` and `:Dark`
-commands.
+commands, or toggle with `:LightSwitch`
