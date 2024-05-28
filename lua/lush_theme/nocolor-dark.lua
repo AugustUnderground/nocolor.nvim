@@ -17,8 +17,8 @@
 local lush = require("lush")
 local hsl  = lush.hsl
 
-local black   = hsl(0,0,0).de(100)
-local white   = hsl(255,255,255).de(100)
+local black   = hsl(0,0,0)
+local white   = hsl(0,0,100)
 
 local yellow  = hsl(40,100,52)
 local red     = hsl(344,100,28)
@@ -30,90 +30,118 @@ local cyan    = hsl(176,69,41)
 ---@diagnostic disable: undefined-global
 local theme = lush( function(injected_functions)
   local sym = injected_functions.sym
-  return { ColorColumn    { bg = black.li(20) }
-         , Conceal        { bg = black.li(4), fg = white.da(15) }
-         , Cursor         { bg = white.da(50), fg = black.li(0) }
-         , CurSearch      { bg = white.da(0), fg = black.li(0), bold = true }
-         , lCursor        { Cursor, reverse = true }
+  return { Normal         { bg = black.li(4), fg = white.da(20) }
+         , NormalNC       { }
+         , Conceal        { }
+         , Cursor         { Normal, reverse = true }
+         , lCursor        { Cursor }
          , CursorIM       { Cursor }
-         , CursorColumn   { bg = black.li(15) }
-         , CursorLine     { bg = black.li(15) }
-         , Directory      { bg = black.li(4), fg = white.da(15), bold = true }
-         , DiffAdd        { bg = black.li(4), fg = white.da(10) }
-         , DiffChange     { bg = black.li(4), fg = white.da(20) }
-         , DiffDelete     { bg = black.li(4), fg = white.da(40) }
-         , DiffText       { bg = black.li(4), fg = white.da(40) }
-         , EndOfBuffer    { bg = black.li(4), fg = black.li(4) }
          , TermCursor     { Cursor }
          , TermCursorNC   { TermCursor }
-         , ErrorMsg       { fg = white.da(5), bg = red.darken(40) }
-         , VertSplit      { bg = black.li(20), fg = black.li(20) }
-         , Folded         { bg = black.li(4), fg = white.da(20) }
-         , FoldColumn     { bg = black.li(4), fg = white.da(10) }
-         , SignColumn     { bg = black.li(4), fg = white.da(15) }
-         , IncSearch      { bg = white.da(20), fg = black.li(20) }
-         , Substitute     { }
-         , LineNr         { bg = black.li(4), fg = white.da(15), bold = false }
+
+         , CurSearch      { bg = white, fg = black, bold = true }
+         , Search         { bg = CurSearch.bg.da(20), fg = CurSearch.fg.li(20) }
+         , IncSearch      { Search }
+
+         , ColorColumn    { bg = black.li(20) }
+         , CursorColumn   { bg = black.li(15) }
+         , CursorLine     { bg = black.li(15) }
+
+         , Directory      { fg = white.da(15), bold = true }
+
+         , DiffAdd        { fg = white.da(10) }
+         , DiffChange     { fg = white.da(30) }
+         , DiffDelete     { fg = white.da(50) }
+         , DiffText       { fg = white.da(25) }
+
+         , EndOfBuffer    { fg = black.li(15) }
+         , NonText        { fg = black.li(15) }
+         , Whitespace     { NonText }
+
+         , ErrorMsg       { bg = red.da(40), fg = white.da(5) }
+         , WarningMsg     { bg = yellow.da(60), fg = white.da(5) }
+         , Underlined     { underline = true }
+         , Ignore         { fg = black.li(30) }
+         , Error          { ErrorMsg }
+         , Todo           { fg = white.da(4), undercurl = true, sp = yellow.de(50) }
+
+         , VertSplit      { fg = Normal.fg.li(10) }
+
+         , Folded         { fg = white.da(30) }
+         , FoldColumn     { Folded }
+
+         , SignColumn     { bold = true }
+
+         , Substitute     { underline = true}
+
+         , LineNr         { fg = Normal.fg.li(10), bold = false }
          , LineNrAbove    { LineNr }
          , LineNrBelow    { LineNr }
-         , CursorLineNr   { bg = black.li(4), fg = white.da(15), bold = true }
-         , CursorLineFold { }
-         , CursorLineSign { }
-         , MatchParen     { bg = black.li(20), fg = white, bold = true }
+         , CursorLineNr   { LineNr, bold = true }
+
+         , CursorLineFold { CursorLine }
+         , CursorLineSign { SignColumn }
+
+         , MatchParen     { bg = Normal.bg.li(15), fg = white, bold = true }
+
          , MsgArea        { }
          , MsgSeparator   { }
-         , MoreMsg        { bg = black.li(4), fg = white.da(10), bold = true }
+         , MoreMsg        { MsgArea, bold = true }
          , ModeMsg        { MoreMsg }
-         , NonText        { bg = black.li(4), fg = black.li(4) }
-         , Normal         { bg = black.li(4), fg = white.da(15) }
-         , NormalFloat    { bg = black.li(10) }
-         , FloatBorder    { bg = black.li(15), fg = white }
-         , FloatTitle     { Normal, underline = true }
-         , NormalNC       { Normal }
-         , Pmenu          { bg = black.li(15), fg = white.da(14) }
-         , PmenuSel       { bg = black.li(25), fg = white.da(4) }
+
+         , NormalFloat    { Normal, bg = black.li(15) }
+         , FloatBorder    { NormalFloat, fg = white }
+         , FloatTitle     { NormalFloat, underline = true }
+
+         , Pmenu          { NormalFloat }
+         , PmenuSel       { bg = Pmenu.bg.li(25), fg = Pmenu.fg.da(4) }
          , PmenuKind      { Pmenu }
          , PmenuKindSel   { PmenuSel }
          , PmenuExtra     { Pmenu }
          , PmenuExtraSel  { PmenuSel }
          , PmenuSbar      { Pmenu }
          , PmenuThumb     { Pmenu, reverse = true }
-         , Question       { bg = black, fg = white }
-         , QuickFixLine   { }
-         , Search         { IncSearch }
-         , SpecialKey     { bg = black, fg = white }
+
+         , Question       { fg = white }
+         , QuickFixLine   { CursorLine }
+
+         , SpecialKey     { fg = white, underline = true }
+
          , SpellBad       { undercurl = true, sp = red.de(50) }
          , SpellCap       { undercurl = true, sp = green.de(50) }
          , SpellLocal     { undercurl = true, sp = blue.de(50) }
          , SpellRare      { undercurl = true, sp = purple.de(50) }
+
          -- , StatusLine     { }
          -- , StatusLineNC   { }
-         , TabLine        { }
-         , TabLineFill    { bg = black.li(4) }
-         , TabLineSel     { bg = black.li(20), bold = true }
-         , Title          { bg = black.li(4), fg = white.da(10) }
+
+         , TabLineFill    { fg = white, bg = black }
+         , TabLine        { fg = white, bg = TabLineFill.bg.li(15) }
+         , TabLineSel     { fg = white, bg = TabLineFill.bg.li(25), bold = true }
+
+         , Title          { underline = true }
+
          , Visual         { reverse = true }
          , VisualNOS      { reverse = true }
-         , WarningMsg     { bg = yellow.darken(60), fg = white.da(5) }
-         , Whitespace     { NonText }
+
          , Winseparator   { VertSplit }
          , WildMenu       { PmenuSel }
          , WinBar         { Pmenu }
          , WinBarNC       { Pmenu }
 
-         , Comment        { fg = white.da(60), italic = true }
+         , Comment        { fg = white.da(65), italic = true }
 
-         , Constant       { fg = white.da(40) }
+         , Constant       { fg = white.da(50) }
          , String         { Constant }
          , Character      { Constant }
          , Number         { Constant }
-         , Boolean        { Constant }
+         , Boolean        { Constant, bold = true }
          , Float          { Constant }
 
-         , Identifier     { fg = white.da(10), italic = true}
+         , Identifier     { fg = white.da(15), italic = true}
          , Function       { Identifier }
 
-         , Statement      { fg = white.da(15), bold = true }
+         , Statement      { fg = white.da(15), bold = true, italic = true }
          , Conditional    { Statement }
          , Repeat         { Statement }
          , Label          { Statement }
@@ -121,28 +149,23 @@ local theme = lush( function(injected_functions)
          , Keyword        { Statement }
          , Exception      { Statement, underline = true }
 
-         , PreProc        { fg = white.da(40), italic = true }
+         , PreProc        { fg = white.da(40) }
          , Include        { PreProc }
          , Define         { PreProc }
          , Macro          { PreProc }
          , PreCondit      { PreProc }
 
-         , Type           { fg = white.da(5), bold = true, italic = true }
-         , StorageClass   { fg = white.da(5), bold = true, italic = true }
-         , Structure      { fg = white.da(5), bold = true, italic = false }
-         , Typedef        { fg = white.da(5), bold = true, italic = true }
+         , Type           { fg = white.da(5), bold = true }
+         , StorageClass   { fg = white.da(5), bold = true }
+         , Structure      { fg = white.da(5), bold = true }
+         , Typedef        { fg = white.da(5), bold = true }
 
-         , Special        { fg = white.da(50) }
+         , Special        { fg = white }
          , SpecialChar    { Special }
          , Tag            { Special }
          , Delimiter      { Special }
          , SpecialComment { Special }
          , Debug          { Special }
-
-         , Underlined     { underline = true }
-         , Ignore         { fg = black.li(30) }
-         , Error          { ErrorMsg }
-         , Todo           { fg = white.da(4), undercurl = true, sp = yellow.de(50) }
 
          , DiagnosticError            { fg = red.de(50) }
          , DiagnosticWarn             { fg = yellow.de(60) }
@@ -164,22 +187,24 @@ local theme = lush( function(injected_functions)
          , DiagnosticFloatingInfo     { DiagnosticInfo }
          , DiagnosticFloatingHint     { DiagnosticHint }
          , DiagnosticFloatingOk       { DiagnosticOk }
-         , DiagnosticSignError        { fg = white }
-         , DiagnosticSignWarn         { fg = white }
-         , DiagnosticSignInfo         { fg = white }
-         , DiagnosticSignHint         { fg = white }
-         , DiagnosticSignOk           { fg = white }
+         , DiagnosticSignError        { fg = white, bold = true }
+         , DiagnosticSignWarn         { fg = white, bold = true }
+         , DiagnosticSignInfo         { fg = white, bold = true }
+         , DiagnosticSignHint         { fg = white, bold = true }
+         , DiagnosticSignOk           { fg = white, bold = true }
          , DiagnosticDeprecated       { fg = white.da(40), strikethrough = true }
-         , DiagnosticUnnecessary      { fg = white.da(40), strikethrough = true }
+         , DiagnosticUnnecessary      { fg = white.da(65), strikethrough = true }
 
-         -- , LspReferenceText            { }
-         -- , LspReferenceRead            { }
-         -- , LspReferenceWrite           { }
-         -- , LspCodeLens                 { }
-         -- , LspCodeLensSeparator        { }
-         -- , LspSignatureActiveParameter { }
+         , LspReferenceText            { fg = white.da(30)}
+         , LspReferenceRead            { fg = white.da(20)}
+         , LspReferenceWrite           { fg = white.da(20)}
+         , LspCodeLens                 { fg = white.da(10) }
+         , LspCodeLensSeparator        { fg = white }
+         , LspSignatureActiveParameter { fg = white }
+
+         , QuickScopePrimary           { fg = black, bg = white }
+         , QuickScopeSecondary         { fg = black.li(15), bg = white.da(30) }
 }
 end)
 
--- Return our parsed theme for extension or use elsewhere.
 return theme
