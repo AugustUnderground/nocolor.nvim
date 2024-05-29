@@ -58,8 +58,8 @@ local theme = lush( function(injected_functions)
          , NonText        { fg = black.li(15) }
          , Whitespace     { NonText }
 
-         , ErrorMsg       { bg = red.da(40), fg = white.da(5) }
-         , WarningMsg     { bg = yellow.da(60), fg = white.da(5) }
+         , ErrorMsg       { fg = red }
+         , WarningMsg     { fg = yellow }
          , Underlined     { underline = true }
          , Ignore         { fg = black.li(30) }
          , Error          { ErrorMsg }
