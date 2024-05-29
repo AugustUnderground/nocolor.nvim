@@ -30,8 +30,15 @@ or
 colorscheme nocolor
 ```
 
+## Highlight Groups
+
 Works well with [lualine](https://github.com/nvim-lualine/lualine.nvim) and
 [barbar](https://github.com/romgrk/barbar.nvim).
+
+Explicit overwriting of highlight groups in:
+
+- [nvim-tree](https://github.com/nvim-tree/nvim-tree.lua)
+- [nvim-notify](https://github.com/rcarriga/nvim-notify)
 
 ## Lightswitch
 

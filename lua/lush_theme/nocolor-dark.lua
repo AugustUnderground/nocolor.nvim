@@ -169,8 +169,8 @@ local theme = lush( function(injected_functions)
 
          , DiagnosticError            { fg = red.de(50) }
          , DiagnosticWarn             { fg = yellow.de(60) }
-         , DiagnosticInfo             { fg = blue.de(50) }
-         , DiagnosticHint             { fg = purple.de(50) }
+         , DiagnosticInfo             { fg = white.da(35) }
+         , DiagnosticHint             { fg = blue.de(50) }
          , DiagnosticOk               { fg = green.de(50) }
          , DiagnosticVirtualTextError { fg = DiagnosticError.fg.de(40), italic = true }
          , DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg.de(40), italic = true }
@@ -179,8 +179,8 @@ local theme = lush( function(injected_functions)
          , DiagnosticVirtualTextOk    { fg = DiagnosticOk.fg.de(40), italic = true }
          , DiagnosticUnderlineError   { fg = white.da(45), undercurl = true, sp = red.de(50) }
          , DiagnosticUnderlineWarn    { fg = white.da(45), undercurl = true, sp = yellow.de(50) }
-         , DiagnosticUnderlineInfo    { fg = white.da(45), undercurl = true, sp = blue.de(50) }
-         , DiagnosticUnderlineHint    { fg = white.da(45), undercurl = true, sp = purple.de(50) }
+         , DiagnosticUnderlineInfo    { fg = white.da(45), undercurl = true, sp = white.da(35) }
+         , DiagnosticUnderlineHint    { fg = white.da(45), undercurl = true, sp = blue.de(50) }
          , DiagnosticUnderlineOk      { fg = white.da(45), undercurl = true, sp = green.de(50) }
          , DiagnosticFloatingError    { DiagnosticError }
          , DiagnosticFloatingWarn     { DiagnosticWarn }
@@ -210,6 +210,30 @@ local theme = lush( function(injected_functions)
          , NvimTreeClosedFolderIcon    { NvimTreeFolderIcon }
          , NvimTreeFolderArrowClosed   { NvimTreeFolderIcon }
          , NvimTreeFolderArrowOpen     { NvimTreeFolderIcon }
+
+         , NotifyBackground  { Normal }
+         , NotifyERRORBorder { FloatBorder }
+         , NotifyERRORIcon   { DiagnosticSignError }
+         , NotifyERRORBody   { Normal }
+         , NotifyERRORTitle  { NotifyERRORBody, bold = true }
+         , NotifyWARNBorder  { FloatBorder }
+         , NotifyWARNIcon    { DiagnosticSignWarn }
+         , NotifyWARNBody    { Normal }
+         , NotifyWARNTitle   { NotifyWARNBody, bold = true }
+         , NotifyINFOBorder  { FloatBorder }
+         , NotifyINFOIcon    { DiagnosticSignInfo }
+         , NotifyINFOBody    { Normal }
+         , NotifyINFOTitle   { NotifyINFOTitle, bold = true }
+         , NotifyTRACEBorder { FloatBorder }
+         , NotifyTRACEIcon   { DiagnosticSignHint }
+         , NotifyTRACEBody   { Normal }
+         , NotifyTRACETitle  { NotifyTRACEBody, bold = true }
+         , NotifyDEBUGBorder { FloatBorder }
+         , NotifyDEBUGIcon   { DiagnosticSignHint }
+         , NotifyDEBUGBody   { Normal }
+         , NotifyDEBUGTitle  { NotifyDEBUGBody, bold = true }
+         , NotifyLogTime     { Comment }
+         , NotifyLogTitle    { Special }
 }
 end)
 
