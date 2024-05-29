@@ -211,7 +211,7 @@ local theme = lush( function(injected_functions)
          , NvimTreeFolderArrowClosed   { NvimTreeFolderIcon }
          , NvimTreeFolderArrowOpen     { NvimTreeFolderIcon }
 
-         , NotifyBackground  { NormalFloat }
+         , NotifyBackground  { fg = NormalFloat.fg, bg = NormalFloat.bg }
          , NotifyERRORBorder { FloatBorder }
          , NotifyERRORIcon   { DiagnosticSignError }
          , NotifyERRORBody   { Normal }
@@ -223,7 +223,7 @@ local theme = lush( function(injected_functions)
          , NotifyINFOBorder  { FloatBorder }
          , NotifyINFOIcon    { DiagnosticSignInfo }
          , NotifyINFOBody    { Normal }
-         , NotifyINFOTitle   { NotifyINFOTitle, bold = true }
+         , NotifyINFOTitle   { NotifyINFOBody, bold = true }
          , NotifyTRACEBorder { FloatBorder }
          , NotifyTRACEIcon   { DiagnosticSignHint }
          , NotifyTRACEBody   { Normal }
