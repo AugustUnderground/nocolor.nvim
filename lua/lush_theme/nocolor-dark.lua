@@ -214,23 +214,23 @@ local theme = lush( function(injected_functions)
          , NotifyBackground  { fg = NormalFloat.fg, bg = NormalFloat.bg }
          , NotifyERRORBorder { FloatBorder }
          , NotifyERRORIcon   { DiagnosticSignError }
-         , NotifyERRORBody   { Normal }
+         , NotifyERRORBody   { NormalFloat }
          , NotifyERRORTitle  { NotifyERRORBody, bold = true }
          , NotifyWARNBorder  { FloatBorder }
          , NotifyWARNIcon    { DiagnosticSignWarn }
-         , NotifyWARNBody    { Normal }
+         , NotifyWARNBody    { NormalFloat }
          , NotifyWARNTitle   { NotifyWARNBody, bold = true }
          , NotifyINFOBorder  { FloatBorder }
          , NotifyINFOIcon    { DiagnosticSignInfo }
-         , NotifyINFOBody    { Normal }
+         , NotifyINFOBody    { NormalFloat }
          , NotifyINFOTitle   { NotifyINFOBody, bold = true }
          , NotifyTRACEBorder { FloatBorder }
          , NotifyTRACEIcon   { DiagnosticSignHint }
-         , NotifyTRACEBody   { Normal }
+         , NotifyTRACEBody   { NormalFloat }
          , NotifyTRACETitle  { NotifyTRACEBody, bold = true }
          , NotifyDEBUGBorder { FloatBorder }
          , NotifyDEBUGIcon   { DiagnosticSignHint }
-         , NotifyDEBUGBody   { Normal }
+         , NotifyDEBUGBody   { NormalFloat }
          , NotifyDEBUGTitle  { NotifyDEBUGBody, bold = true }
          , NotifyLogTime     { Comment }
          , NotifyLogTitle    { Special }
