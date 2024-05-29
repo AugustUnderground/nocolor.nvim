@@ -211,7 +211,7 @@ local theme = lush( function(injected_functions)
          , NvimTreeFolderArrowClosed   { NvimTreeFolderIcon }
          , NvimTreeFolderArrowOpen     { NvimTreeFolderIcon }
 
-         , NotifyBackground  { Normal }
+         , NotifyBackground  { NormalFloat }
          , NotifyERRORBorder { FloatBorder }
          , NotifyERRORIcon   { DiagnosticSignError }
          , NotifyERRORBody   { Normal }
