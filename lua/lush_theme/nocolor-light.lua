@@ -169,9 +169,9 @@ local theme = lush( function(injected_functions)
          , Debug          { Special }
 
          , DiagnosticError            { fg = red.de(50) }
-         , DiagnosticWarn             { fg = yellow.de(60) }
-         , DiagnosticInfo             { fg = blue.de(50) }
-         , DiagnosticHint             { fg = purple.de(50) }
+         , DiagnosticWarn             { fg = yellow.de(50) }
+         , DiagnosticInfo             { fg = black.li(35) }
+         , DiagnosticHint             { fg = blue.de(50) }
          , DiagnosticOk               { fg = green.de(50) }
          , DiagnosticVirtualTextError { fg = DiagnosticError.fg.de(40), italic = true }
          , DiagnosticVirtualTextWarn  { fg = DiagnosticWarn.fg.de(40), italic = true }
@@ -180,8 +180,8 @@ local theme = lush( function(injected_functions)
          , DiagnosticVirtualTextOk    { fg = DiagnosticOk.fg.de(40), italic = true }
          , DiagnosticUnderlineError   { fg = black.li(45), undercurl = true, sp = red.de(50) }
          , DiagnosticUnderlineWarn    { fg = black.li(45), undercurl = true, sp = yellow.de(50) }
-         , DiagnosticUnderlineInfo    { fg = black.li(45), undercurl = true, sp = blue.de(50) }
-         , DiagnosticUnderlineHint    { fg = black.li(45), undercurl = true, sp = purple.de(50) }
+         , DiagnosticUnderlineInfo    { fg = black.li(45), undercurl = true, sp = black.li(35) }
+         , DiagnosticUnderlineHint    { fg = black.li(45), undercurl = true, sp = blue.de(50) }
          , DiagnosticUnderlineOk      { fg = black.li(45), undercurl = true, sp = green.de(50) }
          , DiagnosticFloatingError    { DiagnosticError }
          , DiagnosticFloatingWarn     { DiagnosticWarn }
@@ -235,6 +235,92 @@ local theme = lush( function(injected_functions)
          , NotifyDEBUGTitle  { NotifyDEBUGBody, bold = true }
          , NotifyLogTime     { Comment }
          , NotifyLogTitle    { Special }
+
+         , BufferAlternate          { }
+         , BufferAlternateMod       { }
+         , BufferAlternateIndex     { }
+         , BufferAlternatePin       { }
+         , BufferAlternateSign      { }
+         , BufferAlternateADDED     { }
+         , BufferAlternateBtn       { }
+         , BufferAlternateCHANGED   { }
+         , BufferAlternateDELETED   { }
+         , BufferAlternateERROR     { }
+         , BufferAlternateHINT      { }
+         , BufferAlternateIcon      { }
+         , BufferAlternateINFO      { }
+         , BufferAlternateModBtn    { }
+         , BufferAlternateNumber    { }
+         , BufferAlternatePinBtn    { }
+         , BufferAlternateSignRight { }
+         , BufferAlternateTarget    { }
+         , BufferAlternateWARN      { }
+         , BufferCurrent            { fg = black, bg = white.da(30) }
+         , BufferCurrentMod         { BufferCurrent, italic = true, sp = black }
+         , BufferCurrentIndex       { BufferCurrent }
+         , BufferCurrentPin         { BufferCurrent }
+         , BufferCurrentBtn         { BufferCurrent }
+         , BufferCurrentADDED       { BufferCurrent, underline = true, sp = green.de(50) }
+         , BufferCurrentCHANGED     { BufferCurrent, underline = true, sp = blue.de(50) }
+         , BufferCurrentDELETED     { BufferCurrent, strikethrough = true }
+         , BufferCurrentERROR       { BufferCurrent, undercurl = true, sp = red.de(50) }
+         , BufferCurrentHINT        { BufferCurrent, undercurl = true, sp = blue.de(50) }
+         , BufferCurrentINFO        { BufferCurrent, undercurl = true, sp = black.li(35) }
+         , BufferCurrentWARN        { BufferCurrent, undercurl = true, sp = yellow.de(60) }
+         , BufferCurrentIcon        { BufferCurrent }
+         , BufferCurrentIndex       { BufferCurrent }
+         , BufferCurrentModBtn      { BufferCurrentMod }
+         , BufferCurrentNumber      { BufferCurrentIndex }
+         , BufferCurrentPinBtn      { BufferCurrentPin }
+         , BufferCurrentSign        { BufferCurrent, italic = false }
+         , BufferCurrentSignRight   { BufferCurrentSign }
+         , BufferCurrentTarget      { BufferCurrent, bold = true }
+         , BufferInactive           { fg = black, bg = white.da(17) }
+         , BufferInactiveMod        { BufferInactive, italic = true, sp = white }
+         , BufferInactiveIndex      { BufferInactive }
+         , BufferInactivePin        { BufferInactive }
+         , BufferInactiveBtn        { BufferInactive }
+         , BufferInactiveADDED      { BufferInactive, underline = true, sp = green.de(50) }
+         , BufferInactiveCHANGED    { BufferInactive, underline = true, sp = blue.de(50) }
+         , BufferInactiveDELETED    { BufferInactive, strikethrough = true }
+         , BufferInactiveERROR      { BufferInactive, undercurl = true, sp = red.de(50) }
+         , BufferInactiveHINT       { BufferInactive, undercurl = true, sp = blue.de(50) }
+         , BufferInactiveINFO       { BufferInactive, undercurl = true, sp = black.da(35) }
+         , BufferInactiveWARN       { BufferInactive, undercurl = true, sp = yellow.de(60) }
+         , BufferInactiveIcon       { BufferInactive }
+         , BufferInactiveIndex      { BufferInactive }
+         , BufferInactiveModBtn     { BufferInactiveMod }
+         , BufferInactiveNumber     { BufferInactiveIndex }
+         , BufferInactivePinBtn     { BufferInactivePin }
+         , BufferInactiveSign       { BufferInactive, italic = false }
+         , BufferInactiveSignRight  { BufferInactiveSign }
+         , BufferInactiveTarget     { BufferInactive, bold = true }
+         , BufferVisible            { fg = black.li(35), bg = white.da(10)}
+         , BufferVisibleMod         { BufferVisible, italic = true }
+         , BufferVisibleIndex       { BufferVisible }
+         , BufferVisiblePin         { BufferVisible }
+         , BufferVisibleBtn         { BufferVisible }
+         , BufferVisibleADDED       { BufferVisible, underline = true, sp = black.li(35) }
+         , BufferVisibleCHANGED     { BufferVisible, underline = true, sp = black.li(35) }
+         , BufferVisibleDELETED     { BufferVisible, underline = true, sp = black.li(35) }
+         , BufferVisibleERROR       { BufferVisible, undercurl = true, sp = black.li(35) }
+         , BufferVisibleHINT        { BufferVisible, undercurl = true, sp = black.li(35) }
+         , BufferVisibleINFO        { BufferVisible, undercurl = true, sp = black.li(35) }
+         , BufferVisibleWARN        { BufferVisible, undercurl = true, sp = black.li(35) }
+         , BufferVisibleIcon        { BufferVisible }
+         , BufferVisibleIndex       { BufferVisible }
+         , BufferVisibleModBtn      { BufferVisibleMod }
+         , BufferVisibleNumber      { BufferVisibleIndex }
+         , BufferVisiblePinBtn      { BufferVisiblePin }
+         , BufferVisibleSign        { BufferVisible, italic = false }
+         , BufferVisibleSignRight   { BufferVisibleSign }
+         , BufferVisibleTarget      { BufferVisible, bold = true }
+         , BufferTabpageFill        { fg = black, bg = white }
+         , BufferOffset             { BufferTabpageFill }
+         , BufferScrollArrow        { BufferTabpageFill, bold = true }
+         , BufferTabpagesSep        { fg = black, bg = white }
+         , BufferTabpages           { fg = black.li(50), bg = white }
+
 }
 end)
 
