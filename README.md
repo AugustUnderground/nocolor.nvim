@@ -30,6 +30,13 @@ or
 colorscheme nocolor
 ```
 
+## lualine
+
+```lua
+local nocolor = require("nocolor.lualine")
+require("lualine").setup({ options = { theme = nocolor }})
+```
+
 ## Highlight Groups
 
 Explicity overwrites the highlight groups in:
