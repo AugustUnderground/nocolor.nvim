@@ -1,5 +1,3 @@
-local background = vim.opt.background:get()
-
 local white     = "#fdfdfd"
 local lightgray = "#cdcdcd"
 local gray      = "#8d8d8d"
@@ -44,8 +42,13 @@ local dark = { normal   = { a = { bg = lightgray, fg = black, gui = "bold" }
                           , b = { bg = darkgray,  fg = white }
                           , c = { bg = darkgray,  fg = white } } }
 
-if background == "dark" then
-  return dark
-else
-  return light
+local function theme()
+  local background = vim.opt.background:get()
+  if background == "dark" then
+    return dark
+  else
+    return light
+  end
 end
+
+return theme

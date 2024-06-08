@@ -32,6 +32,8 @@ colorscheme nocolor
 
 ## lualine
 
+Dynamic [lualine](https://github.com/nvim-lualine/lualine.nvim) theme.
+
 ```lua
 local nocolor = require("nocolor.lualine")
 require("lualine").setup({ options = { theme = nocolor }})
@@ -48,4 +50,4 @@ Explicity overwrites the highlight groups in:
 ## Lightswitch
 
 Switch between light and dark mode on the fly with the `:Light` and `:Dark`
-commands, or toggle with `:LightSwitch`
+commands, or toggle with `:LightSwitch`.
