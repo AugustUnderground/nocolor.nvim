@@ -182,11 +182,11 @@ local theme = lush( function(injected_functions)
          , DiagnosticUnderlineInfo    { fg = white.da(45), undercurl = true, sp = white.da(35) }
          , DiagnosticUnderlineHint    { fg = white.da(45), undercurl = true, sp = blue.de(50) }
          , DiagnosticUnderlineOk      { fg = white.da(45), undercurl = true, sp = green.de(50) }
-         , DiagnosticFloatingError    { DiagnosticError }
-         , DiagnosticFloatingWarn     { DiagnosticWarn }
-         , DiagnosticFloatingInfo     { DiagnosticInfo }
-         , DiagnosticFloatingHint     { DiagnosticHint }
-         , DiagnosticFloatingOk       { DiagnosticOk }
+         , DiagnosticFloatingError    { fg = DiagnosticError.fg, bg = NormalFloat.bg }
+         , DiagnosticFloatingWarn     { fg = DiagnosticWarn.fg, bg = NormalFloat.bg }
+         , DiagnosticFloatingInfo     { fg = DiagnosticInfo.fg, bg = NormalFloat.bg }
+         , DiagnosticFloatingHint     { fg = DiagnosticHint.fg, bg = NormalFloat.bg }
+         , DiagnosticFloatingOk       { fg = DiagnosticOk.fg, bg = NormalFloat.bg }
          , DiagnosticSignError        { fg = white, bold = true }
          , DiagnosticSignWarn         { fg = white, bold = true }
          , DiagnosticSignInfo         { fg = white, bold = true }
