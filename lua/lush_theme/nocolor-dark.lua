@@ -92,6 +92,7 @@ local theme = lush( function(injected_functions)
          , NormalFloat    { Normal, bg = black.li(15) }
          , FloatBorder    { NormalFloat, fg = white }
          , FloatTitle     { NormalFloat, underline = true }
+         , Extmarks       { NormalFloat }
 
          , Pmenu          { NormalFloat }
          , PmenuSel       { bg = Pmenu.bg.li(25), fg = Pmenu.fg.da(4) }
