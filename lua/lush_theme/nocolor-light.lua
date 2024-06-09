@@ -61,9 +61,9 @@ local theme = lush( function(injected_functions)
 
          , ErrorMsg       { fg = red }
          , WarningMsg     { fg = yellow }
-         , Bold           { bold = true }
-         , Italic         { italic = true }
-         , Underlined     { underline = true }
+         , Bold           { fg = Normal.fg, bold = true }
+         , Italic         { fg = Normal.fg, italic = true }
+         , Underlined     { fg = Normal.fg, underline = true }
          , Ignore         { fg = white.da(30) }
          , Error          { ErrorMsg }
          , Todo           { fg = black.li(4), undercurl = true, sp = yellow.de(50) }
