@@ -61,6 +61,8 @@ local theme = lush( function(injected_functions)
 
          , ErrorMsg       { fg = red }
          , WarningMsg     { fg = yellow }
+         , Bold           { bold = true }
+         , Italic         { italic = true }
          , Underlined     { underline = true }
          , Ignore         { fg = white.da(30) }
          , Error          { ErrorMsg }
@@ -93,7 +95,6 @@ local theme = lush( function(injected_functions)
          , NormalFloat    { Normal, bg = white.da(15) }
          , FloatBorder    { NormalFloat, fg = black }
          , FloatTitle     { NormalFloat, underline = true }
-         , Extmarks       { NormalFloat }
 
          , Pmenu          { NormalFloat }
          , PmenuSel       { bg = Pmenu.bg.da(25), fg = Pmenu.fg.li(4) }
