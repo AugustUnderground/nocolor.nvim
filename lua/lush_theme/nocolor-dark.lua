@@ -197,11 +197,11 @@ local theme = lush( function(injected_functions)
          , DiagnosticDeprecated       { fg = white.da(40), strikethrough = true }
          , DiagnosticUnnecessary      { fg = white.da(65), strikethrough = true }
 
-         , LspReferenceText            { fg = white.da(30)}
-         , LspReferenceRead            { fg = white.da(20)}
-         , LspReferenceWrite           { fg = white.da(20)}
-         , LspCodeLens                 { fg = white.da(10) }
-         , LspCodeLensSeparator        { fg = white }
+         , LspReferenceText            { fg = white.da(30) }
+         , LspReferenceRead            { fg = white.da(20) }
+         , LspReferenceWrite           { fg = white.da(20) }
+         , LspCodeLens                 { fg = white.da(50), bold = true, italic = true }
+         , LspCodeLensSeparator        { fg = white.da(25) }
          , LspSignatureActiveParameter { fg = white }
 
          , QuickScopePrimary           { fg = black, bg = white }
@@ -321,8 +321,8 @@ local theme = lush( function(injected_functions)
          , BufferScrollArrow        { BufferTabpageFill, bold = true }
          , BufferTabpagesSep        { fg = white, bg = black }
          , BufferTabpages           { fg = white.da(50), bg = black }
+         }
 
-}
-end)
+end )
 
 return theme

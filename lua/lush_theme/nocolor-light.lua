@@ -201,8 +201,8 @@ local theme = lush( function(injected_functions)
          , LspReferenceText            { fg = black.li(30)}
          , LspReferenceRead            { fg = black.li(20)}
          , LspReferenceWrite           { fg = black.li(20)}
-         , LspCodeLens                 { fg = black.li(10) }
-         , LspCodeLensSeparator        { fg = black }
+         , LspCodeLens                 { fg = black.li(50), bold = true, italic = true }
+         , LspCodeLensSeparator        { fg = black.li(25) }
          , LspSignatureActiveParameter { fg = black }
 
          , QuickScopePrimary           { fg = white, bg = black }
@@ -322,9 +322,9 @@ local theme = lush( function(injected_functions)
          , BufferScrollArrow        { BufferTabpageFill, bold = true }
          , BufferTabpagesSep        { fg = black, bg = white }
          , BufferTabpages           { fg = black.li(50), bg = white }
+         }
 
-}
-end)
+end )
 
 return theme
 
