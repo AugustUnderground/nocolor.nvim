@@ -324,9 +324,9 @@ local theme = lush( function(injected_functions)
          , BufferTabpages           { fg = black.li(50), bg = white }
 
          , CSVColumnHeaderOdd       { fg = black, bold = true, italic = true }
-         , CSVColumnHeaderEven      { fg = black.li(20), bold = true, italic = true }
+         , CSVColumnHeaderEven      { fg = black.li(50), bold = true, italic = true }
          , CSVColumnOdd             { fg = black }
-         , CSVColumnEven            { fg = black.li(20) }
+         , CSVColumnEven            { fg = black.li(50) }
          }
 
 end )
