@@ -321,6 +321,11 @@ local theme = lush( function(injected_functions)
          , BufferScrollArrow        { BufferTabpageFill, bold = true }
          , BufferTabpagesSep        { fg = white, bg = black }
          , BufferTabpages           { fg = white.da(50), bg = black }
+
+         , CSVColumnHeaderOdd       { fg = white, bold = true, italic = true }
+         , CSVColumnHeaderEven      { fg = white.da(20), bold = true, italic = true }
+         , CSVColumnOdd             { fg = white }
+         , CSVColumnEven            { fg = white.da(20) }
          }
 
 end )
