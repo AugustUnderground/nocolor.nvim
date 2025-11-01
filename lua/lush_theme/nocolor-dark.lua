@@ -81,9 +81,9 @@ local theme = lush( function(injected_functions)
          , LineNrBelow    { LineNr }
          , CursorLineNr   { LineNr, bold = true }
 
-         , Added          { LineNr, fg = Normal.fg.li(15) }
-         , Changed        { LineNr, fg = Normal.fg }
-         , Removed        { LineNr, fg = Normal.fg.da(15) }
+         , Added          { LineNr, fg = DiffAdd.fg }
+         , Changed        { LineNr, fg = DiffChange.fg }
+         , Removed        { LineNr, fg = DiffDelete.fg }
 
          , CursorLineFold { CursorLine }
          , CursorLineSign { SignColumn }
