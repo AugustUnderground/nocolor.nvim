@@ -216,27 +216,27 @@ local theme = lush( function(injected_functions)
 
          , NotifyBackground  { fg = NormalFloat.fg, bg = NormalFloat.bg }
          , NotifyERRORBorder { FloatBorder }
-         , NotifyERRORIcon   { DiagnosticSignError }
+         , NotifyERRORIcon   { DiagnosticSignError, bg = NormalFloat.bg }
          , NotifyERRORBody   { NormalFloat }
          , NotifyERRORTitle  { NotifyERRORBody, bold = true }
          , NotifyWARNBorder  { FloatBorder }
-         , NotifyWARNIcon    { DiagnosticSignWarn }
+         , NotifyWARNIcon    { DiagnosticSignWarn, bg = NormalFloat.bg }
          , NotifyWARNBody    { NormalFloat }
          , NotifyWARNTitle   { NotifyWARNBody, bold = true }
          , NotifyINFOBorder  { FloatBorder }
-         , NotifyINFOIcon    { DiagnosticSignInfo }
+         , NotifyINFOIcon    { DiagnosticSignInfo, bg = NormalFloat.bg }
          , NotifyINFOBody    { NormalFloat }
          , NotifyINFOTitle   { NotifyINFOBody, bold = true }
          , NotifyTRACEBorder { FloatBorder }
-         , NotifyTRACEIcon   { DiagnosticSignHint }
+         , NotifyTRACEIcon   { DiagnosticSignHint, bg = NormalFloat.bg }
          , NotifyTRACEBody   { NormalFloat }
          , NotifyTRACETitle  { NotifyTRACEBody, bold = true }
          , NotifyDEBUGBorder { FloatBorder }
-         , NotifyDEBUGIcon   { DiagnosticSignHint }
+         , NotifyDEBUGIcon   { DiagnosticSignHint, bg = NormalFloat.bg }
          , NotifyDEBUGBody   { NormalFloat }
          , NotifyDEBUGTitle  { NotifyDEBUGBody, bold = true }
-         , NotifyLogTime     { Comment }
-         , NotifyLogTitle    { Special }
+         , NotifyLogTime     { Comment, bg = NormalFloat.bg }
+         , NotifyLogTitle    { Special, bg = NormalFloat.bg }
 
          , BufferAlternate          { }
          , BufferAlternateMod       { }
