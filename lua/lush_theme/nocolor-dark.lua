@@ -213,29 +213,30 @@ local theme = lush( function(injected_functions)
          , NvimTreeFolderArrowClosed   { NvimTreeFolderIcon }
          , NvimTreeFolderArrowOpen     { NvimTreeFolderIcon }
 
-         , NotifyBackground  { fg = NormalFloat.fg, bg = NormalFloat.bg }
-         , NotifyERRORBorder { FloatBorder }
-         , NotifyERRORIcon   { DiagnosticSignError, bg = NormalFloat.bg }
-         , NotifyERRORBody   { NormalFloat }
+         , NotifyBorder      { Normal, fg = white }
+         , NotifyBackground  { Normal }
+         , NotifyERRORBorder { NotifyBorder }
+         , NotifyERRORIcon   { DiagnosticSignError, bg = Normal.bg }
+         , NotifyERRORBody   { Normal }
          , NotifyERRORTitle  { NotifyERRORBody, bold = true }
-         , NotifyWARNBorder  { FloatBorder }
-         , NotifyWARNIcon    { DiagnosticSignWarn, bg = NormalFloat.bg }
-         , NotifyWARNBody    { NormalFloat }
+         , NotifyWARNBorder  { NotifyBorder }
+         , NotifyWARNIcon    { DiagnosticSignWarn, bg = Normal.bg }
+         , NotifyWARNBody    { Normal }
          , NotifyWARNTitle   { NotifyWARNBody, bold = true }
-         , NotifyINFOBorder  { FloatBorder }
-         , NotifyINFOIcon    { DiagnosticSignInfo, bg = NormalFloat.bg }
-         , NotifyINFOBody    { NormalFloat }
+         , NotifyINFOBorder  { NotifyBorder }
+         , NotifyINFOIcon    { DiagnosticSignInfo, bg = Normal.bg }
+         , NotifyINFOBody    { Normal }
          , NotifyINFOTitle   { NotifyINFOBody, bold = true }
-         , NotifyTRACEBorder { FloatBorder }
-         , NotifyTRACEIcon   { DiagnosticSignHint, bg = NormalFloat.bg }
-         , NotifyTRACEBody   { NormalFloat }
+         , NotifyTRACEBorder { NotifyBorder }
+         , NotifyTRACEIcon   { DiagnosticSignHint, bg = Normal.bg }
+         , NotifyTRACEBody   { Normal }
          , NotifyTRACETitle  { NotifyTRACEBody, bold = true }
-         , NotifyDEBUGBorder { FloatBorder }
-         , NotifyDEBUGIcon   { DiagnosticSignHint, bg = NormalFloat.bg }
-         , NotifyDEBUGBody   { NormalFloat }
+         , NotifyDEBUGBorder { NotifyBorder }
+         , NotifyDEBUGIcon   { DiagnosticSignHint, bg = Normal.bg }
+         , NotifyDEBUGBody   { Normal }
          , NotifyDEBUGTitle  { NotifyDEBUGBody, bold = true }
-         , NotifyLogTime     { Comment, bg = NormalFloat.bg }
-         , NotifyLogTitle    { Special, bg = NormalFloat.bg }
+         , NotifyLogTime     { Comment, bg = Normal.bg }
+         , NotifyLogTitle    { Special, bg = Normal.bg }
 
          , BufferAlternate          { }
          , BufferAlternateMod       { }
